@@ -16,7 +16,7 @@ public class Deck implements Iterable<Card> {
       for (Shading shading : Shading.values()) {
         for (Number number : Number.values()) {
           for (Shape shape : Shape.values()) {
-            Card card = new Card(color, number, shape, shading);
+            Card card = new Card( number, shape, color, shading);
             cards.add(card);
           }
         }
