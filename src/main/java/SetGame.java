@@ -7,11 +7,8 @@ public class SetGame {
 
   private static final int  THRESHOLD = 12;
   private static final int THRESHOLD_FOR_SET = 3;
-
-
-  private final Random rng;
-  private Card[] cards;
-  private Card[] set;
+  private final Card[] cards;
+  private final Card[] set;
   private int card1;
   private int card2;
   private int card3;
@@ -19,7 +16,6 @@ public class SetGame {
 
 
   public SetGame(Random rng) {
-    this.rng = rng;
     Deck deck = new Deck();
     deck.shuffle(rng);
     cards = new Card[THRESHOLD];
@@ -72,7 +68,7 @@ public class SetGame {
 
 
 
-  public boolean checkSet() {
+  public void checkSet() {
     boolean result = checkColor() && checkNumber() && checkShading() && checkShape();
     if(result){
       setCount(getCount()+1);
@@ -83,7 +79,6 @@ public class SetGame {
       getUserInput();
 
     }
-    return result;
   }
   public void reset(){
     SetGame game = new SetGame(new SecureRandom());
