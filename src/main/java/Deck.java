@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
@@ -16,7 +15,7 @@ public class Deck implements Iterable<Card> {
       for (Shading shading : Shading.values()) {
         for (Number number : Number.values()) {
           for (Shape shape : Shape.values()) {
-            Card card = new Card( number, shape, color, shading);
+            Card card = new Card(number, shape, color, shading);
             cards.add(card);
           }
         }
@@ -40,14 +39,6 @@ public class Deck implements Iterable<Card> {
     Collections.shuffle(cards);
   }
 
-  public void sort() {
-
-  }
-
-  public void sort(Comparator<Card> comparator) {
-    cards.sort(comparator);
-
-  }
 
   @Override
   public int hashCode() {
