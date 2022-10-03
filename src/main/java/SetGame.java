@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+import java.util.List;
+
+public class SetGame {
+
+  public static void main(String[] args) {
+    long start = System.currentTimeMillis();
+    long end = start+6*1000;
+
+    while(System.currentTimeMillis() < end){
+
+      System.out.println("Our game displays here");
+
+    }
+    System.out.println("You find x sets!!!");
+=======
 import java.security.SecureRandom;
 import java.util.Iterator;
 import java.util.Random;
@@ -68,10 +84,13 @@ public class SetGame {
       set[2] = cards[getCard3() - 1];
     }
     checkSet();
+>>>>>>> main
   }
 
 
 
+<<<<<<< HEAD
+=======
   public boolean checkSet() {
     boolean result = checkColor() && checkNumber() && checkShading() && checkShape();
     if(result){
@@ -162,5 +181,6 @@ public class SetGame {
   public void setCount(int count) {
     this.count = count;
   }
+>>>>>>> main
 
 }
