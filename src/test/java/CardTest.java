@@ -52,5 +52,6 @@ class CardTest {
 
   @Test
   void testToString() {
+    System.out.println(card.toString());
   }
 }
