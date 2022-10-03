@@ -52,7 +52,7 @@ public class Card {
 
   @Override
   public String toString() {
-    return number.toString() + color.toString() + shape.toString() + shading.toString();
+    return number.toString() + ", " + color.toString() + ", " + shape.toString() +", "+ shading.toString();
   }
 
 
