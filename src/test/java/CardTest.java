@@ -1,7 +1,5 @@
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Before;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +15,7 @@ class CardTest {
 
   @Test
   void getShape() {
-    assertTrue(card.getShape()== Shape.DIAMOND);
+    assertSame(card.getShape(), Shape.DIAMOND);
   }
 
 
