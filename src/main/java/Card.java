@@ -55,4 +55,6 @@ public class Card {
     return number.toString() + color.toString() + shape.toString() + shading.toString();
   }
 
+
+
 }
