@@ -1,19 +1,4 @@
-<<<<<<< HEAD
-import java.util.List;
 
-public class SetGame {
-
-  public static void main(String[] args) {
-    long start = System.currentTimeMillis();
-    long end = start+6*1000;
-
-    while(System.currentTimeMillis() < end){
-
-      System.out.println("Our game displays here");
-
-    }
-    System.out.println("You find x sets!!!");
-=======
 import java.security.SecureRandom;
 import java.util.Iterator;
 import java.util.Random;
@@ -84,13 +69,9 @@ public class SetGame {
       set[2] = cards[getCard3() - 1];
     }
     checkSet();
->>>>>>> main
   }
 
 
-
-<<<<<<< HEAD
-=======
   public boolean checkSet() {
     boolean result = checkColor() && checkNumber() && checkShading() && checkShape();
     if(result){
@@ -116,8 +97,7 @@ public class SetGame {
   private boolean checkColor() {
 
     return ((set[0].getColor() == set[1].getColor()
-        && set[1].getColor() == set[2].getColor()
-        && set[0].getColor() == set[2].getColor())
+        && set[1].getColor() == set[2].getColor())
         || set[0].getColor() != set[1].getColor()
         && set[1].getColor() != set[2].getColor()
         && set[0].getColor() != set[2].getColor());
@@ -125,8 +105,7 @@ public class SetGame {
 
   private boolean checkNumber() {
     return ((set[0].getNumber() == set[1].getNumber()
-        && set[1].getNumber() == set[2].getNumber()
-        && set[0].getNumber() == set[2].getNumber())
+        && set[1].getNumber() == set[2].getNumber())
         || set[0].getNumber() != set[1].getNumber()
         && set[1].getNumber() != set[2].getNumber()
         && set[0].getNumber() != set[2].getNumber());
@@ -134,8 +113,7 @@ public class SetGame {
 
   private boolean checkShading() {
     return ((set[0].getShading() == set[1].getShading()
-        && set[1].getShading() == set[2].getShading()
-        && set[0].getShading() == set[2].getShading())
+        && set[1].getShading() == set[2].getShading())
         || set[0].getShading() != set[1].getShading()
         && set[1].getShading() != set[2].getShading()
         && set[0].getShading() != set[2].getShading());
@@ -143,8 +121,7 @@ public class SetGame {
 
   private boolean checkShape() {
     return ((set[0].getShape() == set[1].getShape()
-        && set[1].getShape() == set[2].getShape()
-        && set[0].getShape() == set[2].getShape())
+        && set[1].getShape() == set[2].getShape())
         || set[0].getShape() != set[1].getShape()
         && set[1].getShape() != set[2].getShape()
         && set[0].getShape() != set[2].getShape());
@@ -181,6 +158,5 @@ public class SetGame {
   public void setCount(int count) {
     this.count = count;
   }
->>>>>>> main
 
 }
