@@ -8,11 +8,9 @@ public class SetGame {
 
   private static final int  THRESHOLD = 12;
   private static final int THRESHOLD_FOR_SET = 3;
-
-
-  private final Random rng;
-  private Card[] cards;
-  private Card[] set;
+  private final Card[] cards;
+  private final Card[] set;
+  private final Deck deck;
   private int card1;
   private int card2;
   private int card3;
@@ -20,8 +18,7 @@ public class SetGame {
 
 
   public SetGame(Random rng) {
-    this.rng = rng;
-    Deck deck = new Deck();
+    deck = new Deck();
     deck.shuffle(rng);
     cards = new Card[THRESHOLD];
     set = new Card[THRESHOLD_FOR_SET];
@@ -36,8 +33,8 @@ public class SetGame {
   }
 
   public void display() {
-    System.out.println("Hello, \nPlease select three cards to find a set. Please type card’s number below.\n"
-        + "If you want to get different 12 cards, then type R to reset the cards. \nIf you want to stop the game, you can type Q to stop it.");
+    System.out.println("Hello, \nPlease select three cards to find a set. Please type the card’s number below.\n"
+        + "If you want to get 12 different cards, then type R to reset the cards. \nIf you want to stop the game, you can type Q to stop it.");
     System.out.println("-------------------------------------------------------------------------------");
     for (int i = 0; i < THRESHOLD; i++) {
       System.out.printf("Card %d: %s%n",
@@ -72,7 +69,9 @@ public class SetGame {
   }
 
 
+
   public boolean checkSet() {
+
     boolean result = checkColor() && checkNumber() && checkShading() && checkShape();
     if(result){
       setCount(getCount()+1);
@@ -83,11 +82,11 @@ public class SetGame {
       getUserInput();
 
     }
-    return result;
   }
   public void reset(){
-    SetGame game = new SetGame(new SecureRandom());
-    game.display();
+    deck.shuffle();
+    divideCards(deck);
+    display();
   }
   public void play(){
     display();
