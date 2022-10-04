@@ -1,12 +1,13 @@
 import java.util.Objects;
 
 public class Card {
+
   private final ShapeWithColor shape;
   private final Number number;
   private final Shading shading;
 
 
-  public Card(Number number, ShapeWithColor shape, Shading shading){
+  public Card(Number number, ShapeWithColor shape, Shading shading) {
     this.shape = shape;
     this.number = number;
     this.shading = shading;
@@ -27,19 +28,20 @@ public class Card {
 
   @Override
   public int hashCode() {
-    return Objects.hash(shape, number,shading);
+    return Objects.hash(shape, number, shading);
   }
 
   @Override
   public boolean equals(Object obj) {
     boolean result;
 
-    if(this ==obj){
+    if (this == obj) {
       result = true;
-    }else if(obj instanceof Card){
+    } else if (obj instanceof Card) {
       Card other = (Card) obj;
-      result = (this.number == other.number &&  this.shape == other.shape && this.shading == other.shading);
-    }else{
+      result = (this.number == other.number && this.shape == other.shape
+          && this.shading == other.shading);
+    } else {
       result = false;
     }
     return result;
@@ -47,9 +49,8 @@ public class Card {
 
   @Override
   public String toString() {
-    return number.toString() + ", " + shape.toString() +", "+ shading.toString();
+    return number.toString() + ", " + shape.toString() + ", " + shading.toString();
   }
-
 
 
 }
