@@ -1,20 +1,20 @@
 import java.util.Objects;
 
 public class Card {
-  private final Shape shape;
+  private final ShapeWithColor shape;
   private final Number number;
-  private final Color color;
+//  private final Color color;
   private final Shading shading;
 
 
-  public Card(Number number, Shape shape, Color color, Shading shading){
+  public Card(Number number, ShapeWithColor shape,  Shading shading){
     this.shape = shape;
     this.number = number;
-    this.color = color;
+//    this.color = color;
     this.shading = shading;
   }
 
-  public Shape getShape() {
+  public ShapeWithColor getShape() {
     return shape;
   }
 
@@ -22,9 +22,6 @@ public class Card {
     return number;
   }
 
-  public Color getColor() {
-    return color;
-  }
 
   public Shading getShading() {
     return shading;
@@ -32,7 +29,7 @@ public class Card {
 
   @Override
   public int hashCode() {
-    return Objects.hash(shape, number,color,shading);
+    return Objects.hash(shape, number,shading);
   }
 
   @Override
@@ -43,7 +40,7 @@ public class Card {
       result = true;
     }else if(obj instanceof Card){
       Card other = (Card) obj;
-      result = (this.number == other.number && this.color == other.color && this.shape == other.shape && this.shading == other.shading);
+      result = (this.number == other.number &&  this.shape == other.shape && this.shading == other.shading);
     }else{
       result = false;
     }
@@ -52,7 +49,7 @@ public class Card {
 
   @Override
   public String toString() {
-    return number.toString() + ", " + color.toString() + ", " + shape.toString() +", "+ shading.toString();
+    return number.toString() + ", "  + ", " + shape.toString() +", "+ shading.toString();
   }
 
 
