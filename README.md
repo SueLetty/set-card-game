@@ -13,4 +13,7 @@ How to play the game of SET:
 3. Follow the direction provided above to make a SET. 
 4. There will be a time limit of 60 seconds.
 5. If you are able to make a SET within allotted time you can pick another SET.
-6. Otherwise select R to reset or Q to play again.
+6. Otherwise type R to reset or Q to stop.
+7. At the end of the game the result will be displayed above. 
+
+
