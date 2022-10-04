@@ -42,18 +42,18 @@ public class SetGame {
         "-------------------------------------------------------------------------------");
     for (int i = 0; i < THRESHOLD; i++) {
       Card card = cards[i];
-      if (card.getNumber() == Number.ONE) {
-        System.out.print("Card " + (i + 1) + ": " + card.getShading() + " ");
+      if(card.getNumber() == Number.ONE) {
+        System.out.print("Card " + (i + 1) + ": " + card.getShading()+ " " );
         System.out.println(card.getShape().getSymbol());
       }
-      if (card.getNumber() == Number.TWO) {
-        System.out.print("Card " + (i + 1) + ": " + card.getShading() + " ");
+      if(card.getNumber() == Number.TWO) {
+        System.out.print("Card " + (i + 1) + ": " + card.getShading()+ " " );
         System.out.print(card.getShape().getSymbol());
         System.out.println(card.getShape().getSymbol());
 
       }
-      if (card.getNumber() == Number.THREE) {
-        System.out.print("Card " + (i + 1) + ": " + card.getShading() + " ");
+      if(card.getNumber() == Number.THREE) {
+        System.out.print("Card " + (i + 1) + ": " + card.getShading() + " " );
         System.out.print(card.getShape().getSymbol());
         System.out.print(card.getShape().getSymbol());
         System.out.println(card.getShape().getSymbol());
@@ -66,17 +66,17 @@ public class SetGame {
   }
 
   public void getUserInput() {
-    for (int i = 0; i < THRESHOLD_FOR_SET; i++) {
+    for(int i = 0; i < THRESHOLD_FOR_SET; i++){
       Scanner input = new Scanner(System.in);
       System.out.print("Card " + (i + 1) + ": ");
       String userInput = input.next();
-      if (inputValidation(userInput)) {
+      if(inputValidation(userInput)){
         if (userInput.equals("R")) {
           reset();
         } else if (userInput.equals("Q")) {
           System.out.println("Thank you for playing! Bye~~");
           System.exit(0);
-        } else if (isInteger(userInput)) {
+        } else if( isInteger(userInput)) {
           indexes[i] = Integer.parseInt(userInput);
           set[i] = cards[indexes[i] - 1];
         }
@@ -85,12 +85,11 @@ public class SetGame {
 
     checkSet();
   }
-
-  private boolean inputValidation(String input) {
+  private boolean inputValidation(String input){
     boolean result = false;
-    if (input.equals("Q") || input.equals("R") || isInteger(input)) {
+    if(input.equals("Q") || input.equals("R") || isInteger(input)){
       result = true;
-    } else {
+    }else{
       System.out.println("Please enter the valid value. "
           + "\nR for reset the game."
           + "\nQ for stop the game."
@@ -99,7 +98,6 @@ public class SetGame {
     }
     return result;
   }
-
   private boolean isInteger(String str) {
     try {
       Integer.parseInt(str);
