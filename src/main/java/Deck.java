@@ -21,7 +21,6 @@ public class Deck implements Iterable<Card> {
     }
   }
 
-
   @Override
   public Iterator<Card> iterator() {
     return Collections.unmodifiableList(cards).iterator();
