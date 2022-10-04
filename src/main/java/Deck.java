@@ -14,13 +14,12 @@ public class Deck implements Iterable<Card> {
     for (ShapeWithColor shape : ShapeWithColor.values()) {
       for (Shading shading : Shading.values()) {
         for (Number number : Number.values()) {
-            Card card = new Card(number, shape, shading);
-            cards.add(card);
-          }
+          Card card = new Card(number, shape, shading);
+          cards.add(card);
         }
       }
     }
-
+  }
 
 
   @Override
