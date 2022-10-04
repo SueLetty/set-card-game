@@ -41,8 +41,23 @@ public class SetGame {
     System.out.println(
         "-------------------------------------------------------------------------------");
     for (int i = 0; i < THRESHOLD; i++) {
-      System.out.printf("Card %d: %s%n",
-          i + 1, cards[i].toString());
+      Card card = cards[i];
+      if(card.getNumber() == Number.ONE) {
+        System.out.print("Card " + (i + 1) + ": " + card.getShading()+ " " );
+        System.out.println(card.getShape().getSymbol());
+      }
+      if(card.getNumber() == Number.TWO) {
+        System.out.print("Card " + (i + 1) + ": " + card.getShading()+ " " );
+        System.out.print(card.getShape().getSymbol());
+        System.out.println(card.getShape().getSymbol());
+
+      }
+      if(card.getNumber() == Number.THREE) {
+        System.out.print("Card " + (i + 1) + ": " + card.getShading() + " " );
+        System.out.print(card.getShape().getSymbol());
+        System.out.print(card.getShape().getSymbol());
+        System.out.println(card.getShape().getSymbol());
+      }
     }
     System.out.println(
         "-------------------------------------------------------------------------------");
