@@ -70,7 +70,7 @@ public class SetGame {
 
 
 
-  public boolean checkSet() {
+  public void checkSet() {
 
     boolean result = checkColor() && checkNumber() && checkShading() && checkShape();
     if(result){
