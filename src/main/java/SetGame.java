@@ -70,7 +70,7 @@ public class SetGame {
 
 
 
-  public boolean checkSet() {
+  public void checkSet() {
 
     boolean result = checkColor() && checkNumber() && checkShading() && checkShape();
     if(result){
@@ -95,11 +95,11 @@ public class SetGame {
   }
   private boolean checkColor() {
 
-    return ((set[0].getColor() == set[1].getColor()
-        && set[1].getColor() == set[2].getColor())
-        || set[0].getColor() != set[1].getColor()
-        && set[1].getColor() != set[2].getColor()
-        && set[0].getColor() != set[2].getColor());
+    return ((set[0].getShape().getColor() == set[1].getShape().getColor()
+        && set[1].getShape().getColor() == set[2].getShape().getColor())
+        || set[0].getShape().getColor() != set[1].getShape().getColor()
+        && set[1].getShape().getColor() != set[2].getShape().getColor()
+        && set[0].getShape().getColor() != set[2].getShape().getColor());
   }
 
   private boolean checkNumber() {
@@ -119,11 +119,11 @@ public class SetGame {
   }
 
   private boolean checkShape() {
-    return ((set[0].getShape() == set[1].getShape()
-        && set[1].getShape() == set[2].getShape())
-        || set[0].getShape() != set[1].getShape()
-        && set[1].getShape() != set[2].getShape()
-        && set[0].getShape() != set[2].getShape());
+    return ((set[0].getShape().getSymbol().equals(set[1].getShape().getSymbol())
+        && set[1].getShape().getSymbol().equals(set[2].getShape().getSymbol()))
+        || (!set[0].getShape().getSymbol().equals(set[1].getShape().getSymbol())
+        && !set[1].getShape().getSymbol().equals(set[2].getShape().getSymbol())
+        && !set[0].getShape().getSymbol().equals(set[2].getShape().getSymbol())));
   }
 
   public int getCard1() {

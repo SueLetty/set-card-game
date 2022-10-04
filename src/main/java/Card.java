@@ -3,14 +3,12 @@ import java.util.Objects;
 public class Card {
   private final ShapeWithColor shape;
   private final Number number;
-//  private final Color color;
   private final Shading shading;
 
 
-  public Card(Number number, ShapeWithColor shape,  Shading shading){
+  public Card(Number number, ShapeWithColor shape, Shading shading){
     this.shape = shape;
     this.number = number;
-//    this.color = color;
     this.shading = shading;
   }
 
@@ -49,7 +47,7 @@ public class Card {
 
   @Override
   public String toString() {
-    return number.toString() + ", "  + ", " + shape.toString() +", "+ shading.toString();
+    return number.toString() + ", " + shape.toString() +", "+ shading.toString();
   }
 
 
