@@ -8,14 +8,14 @@ class CardTest {
 
   @BeforeEach
   public void init(){
-   card = new Card(Number.ONE, Shape.DIAMOND,Color.GREEN, Shading.OUTLINED);
+   card = new Card(Number.ONE, ShapeWithColor.PURPLE_CIRCLE, Shading.OUTLINED);
 
   }
 
 
   @Test
   void getShape() {
-    assertSame(card.getShape(), Shape.DIAMOND);
+    assertSame(card.getShape(), ShapeWithColor.PURPLE_CIRCLE);
   }
 
 
@@ -24,10 +24,6 @@ class CardTest {
     assertEquals("One", card.getNumber().toString());
   }
 
-  @Test
-  void getColor() {
-    assertEquals("Green", card.getColor().toString());
-  }
 
   @Test
   void getShading() {
@@ -41,9 +37,9 @@ class CardTest {
 
   @Test
   void testEquals() {
-    Card other1 = new Card(Number.ONE, Shape.DIAMOND,Color.GREEN, Shading.OUTLINED);
+    Card other1 = new Card(Number.ONE, ShapeWithColor.PURPLE_CIRCLE, Shading.OUTLINED);
     assertEquals(card, other1);
-    Card other2 = new Card(Number.THREE, Shape.DIAMOND, Color.GREEN, Shading.OUTLINED);
+    Card other2 = new Card(Number.THREE, ShapeWithColor.PURPLE_HEART, Shading.OUTLINED);
     assertNotEquals(card, other2);
 
   }
@@ -51,5 +47,6 @@ class CardTest {
   @Test
   void testToString() {
     System.out.println(card.toString());
+    assertEquals("One, Purple_circle, Outlined", card.toString());
   }
 }

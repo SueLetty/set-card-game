@@ -11,17 +11,16 @@ public class Deck implements Iterable<Card> {
 
   public Deck() {
     cards = new ArrayList<>();
-    for (Color color : Color.values()) {
+    for (ShapeWithColor shape : ShapeWithColor.values()) {
       for (Shading shading : Shading.values()) {
         for (Number number : Number.values()) {
-          for (Shape shape : Shape.values()) {
-            Card card = new Card(number, shape, color, shading);
+            Card card = new Card(number, shape, shading);
             cards.add(card);
           }
         }
       }
     }
-  }
+
 
 
   @Override
