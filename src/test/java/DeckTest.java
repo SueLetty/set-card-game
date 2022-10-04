@@ -54,5 +54,6 @@ class DeckTest {
   @Test
   void testToString() {
     System.out.println(deck.toString());
+    assertEquals("One, Purple_circle, Outlined", deck.toString());
   }
 }
