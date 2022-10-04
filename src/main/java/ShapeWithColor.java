@@ -1,12 +1,12 @@
 enum ShapeWithColor {
 
-  PURPPLEHEART("\ud83d\udc9c", Color.PURPLE),
+  PURPLEHEART("\ud83d\udc9c", Color.PURPLE),
   GREENHEART("\ud83d\udc9a",Color.GREEN),
   REDHEART("\ud83d\udc97",Color.RED),
-  PURPPLECIRCLE("\ud83d\udfe3",Color.PURPLE),
+  PURPLECIRCLE("\ud83d\udfe3",Color.PURPLE),
   GREENCIRCLE("\ud83d\udfe2",Color.GREEN),
   REDCIRCLE("\ud83d\udd34",Color.RED),
-  PURPPLESQUARE("\ud83d\udfe3",Color.PURPLE),
+  PURPLESQUARE("\ud83d\udfe3",Color.PURPLE),
   GREENSQUARE("\ud83d\udfe9",Color.GREEN),
   REDSQUARE("\ud83d\udfe5",Color.RED);
 
