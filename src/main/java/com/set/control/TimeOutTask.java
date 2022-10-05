@@ -5,6 +5,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class TimeOutTask extends TimerTask {
+
   private final Thread thread;
   private final Timer timer;
   private final SetGame game;
@@ -19,7 +20,7 @@ public class TimeOutTask extends TimerTask {
 
   @Override
   public void run() {
-    if(thread != null && thread.isAlive()) {
+    if (thread != null && thread.isAlive()) {
       thread.interrupt();
       timer.cancel();
       System.out.printf("You are out of time! You have found %d set(s)!", game.getCount());
