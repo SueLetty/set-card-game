@@ -46,7 +46,6 @@ class CardTest {
 
   @Test
   void testToString() {
-    System.out.println(card.toString());
     assertEquals("One, Purple_circle, Outlined", card.toString());
   }
 }

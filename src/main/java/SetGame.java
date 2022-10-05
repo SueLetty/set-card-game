@@ -3,8 +3,10 @@ import java.security.SecureRandom;
 import java.util.Iterator;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
 
-public class SetGame {
+public class SetGame implements Runnable {
 
   private static final int THRESHOLD = 12;
   private static final int THRESHOLD_FOR_SET = 3;
@@ -12,9 +14,7 @@ public class SetGame {
   private final Card[] set;
   private final int[] indexes;
   private final Deck deck;
-
   private int count;
-
 
   public SetGame(Random rng) {
     deck = new Deck();
@@ -61,7 +61,6 @@ public class SetGame {
     }
     System.out.println(
         "-------------------------------------------------------------------------------");
-
     getUserInput();
   }
 
@@ -82,9 +81,9 @@ public class SetGame {
         }
       }
     }
-
     checkSet();
   }
+
   private boolean inputValidation(String input){
     boolean result = false;
     if(input.equals("Q") || input.equals("R") || isInteger(input)){
@@ -98,6 +97,7 @@ public class SetGame {
     }
     return result;
   }
+
   private boolean isInteger(String str) {
     try {
       Integer.parseInt(str);
@@ -107,9 +107,7 @@ public class SetGame {
     }
   }
 
-
   public void checkSet() {
-
     boolean result = checkColor() && checkNumber() && checkShading() && checkShape();
     if (result) {
       setCount(getCount() + 1);
@@ -128,11 +126,6 @@ public class SetGame {
     display();
   }
 
-  public void play() {
-    display();
-    checkSet();
-
-  }
 
   private boolean checkColor() {
 
@@ -175,4 +168,8 @@ public class SetGame {
     this.count = count;
   }
 
+  @Override
+  public void run() {
+    display();
+  }
 }
