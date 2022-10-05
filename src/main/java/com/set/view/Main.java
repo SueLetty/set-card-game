@@ -1,4 +1,7 @@
+package com.set.view;
+import com.set.control.TimeOutTask;
 
+import com.set.model.SetGame;
 import java.security.SecureRandom;
 import java.util.Timer;
 
