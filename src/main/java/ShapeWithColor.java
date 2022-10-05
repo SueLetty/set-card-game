@@ -3,7 +3,7 @@ enum ShapeWithColor {
 
   PURPLE_HEART("\ud83d\udc9c", Color.PURPLE),
   GREEN_HEART("\ud83d\udc9a", Color.GREEN),
-  RED_HEART("\ud83d\udc97", Color.RED),
+  RED_HEART("\u2764\ufe0f", Color.RED),
   PURPLE_CIRCLE("\ud83d\udfe3", Color.PURPLE),
   GREEN_CIRCLE("\ud83d\udfe2", Color.GREEN),
   RED_CIRCLE("\ud83d\udd34", Color.RED),
@@ -15,7 +15,7 @@ enum ShapeWithColor {
   private final Color color;
 
   enum Color {
-    RED, GREEN, PURPLE;
+    RED, GREEN, PURPLE
   }
 
   ShapeWithColor(String symbol, Color color) {
