@@ -1,17 +1,29 @@
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.security.SecureRandom;
-import java.util.ArrayList;
+import java.util.Iterator;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class DeckTest {
+
   private Deck deck;
 
-  @Test
-  void iterator() {
+  @BeforeEach
+  public void init() {
+    deck = new Deck();
+  }
 
-    ArrayList<String> list = new ArrayList<String>();
-    list.iterator();
+  @Test
+  void testIterator() {
+    Iterator<Card> iterator = deck.iterator();
+    int count = 0;
+    while (iterator.hasNext()) {
+      iterator.next();
+      count++;
+    }
+    assertEquals(81, count);
+
 
   }
 
@@ -21,7 +33,7 @@ class DeckTest {
     String original = deck1.toString();
     deck1.shuffle();
     String shuffled = deck1.toString();
-    assertFalse(original.equals(shuffled));
+    assertNotEquals(original, shuffled);
 
 
   }
@@ -32,28 +44,32 @@ class DeckTest {
     String original = deck1.toString();
     deck1.shuffle(new SecureRandom());
     String shuffled = deck1.toString();
-    assertFalse(original.equals(shuffled));
+    assertNotEquals(original, shuffled);
 
 
   }
 
   @Test
   void testHashCode() {
-    System.out.println(deck.hashCode());
+    Deck deck1 = new Deck();
+    assertNotEquals(deck1.hashCode(), deck.hashCode());
+
   }
 
   @Test
   void testEquals() {
-    Deck deck1 = new Deck();
+    Deck deck1 = deck;
     assertEquals(deck, deck1);
     Deck deck2 = new Deck();
-    assertNotEquals(deck, deck2);
+    assertEquals(deck, deck2);
 
   }
 
   @Test
   void testToString() {
-    System.out.println(deck.toString());
-    assertEquals("One, Purple_circle, Outlined", deck.toString());
+    Deck deck1 = deck;
+    assertEquals(deck1.toString(), deck.toString());
+
+
   }
 }
