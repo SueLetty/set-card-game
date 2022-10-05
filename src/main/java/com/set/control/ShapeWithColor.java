@@ -1,4 +1,6 @@
-enum ShapeWithColor {
+package com.set.control;
+
+public enum ShapeWithColor {
 
 
   PURPLE_HEART("\ud83d\udc9c", Color.PURPLE),
