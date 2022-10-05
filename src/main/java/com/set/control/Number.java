@@ -1,8 +1,8 @@
 package com.set.control;
 
- public enum Number {
+public enum Number {
 
-  ONE, TWO,THREE;
+  ONE, TWO, THREE;
 
   @Override
   public String toString() {
