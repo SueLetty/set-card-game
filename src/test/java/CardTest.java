@@ -32,7 +32,10 @@ class CardTest {
 
   @Test
   void testHashCode() {
-    System.out.println(card.hashCode());
+    Card card1 = card;
+    assertEquals(card.hashCode(), card1.hashCode());
+    Card card2 = new Card(Number.THREE, ShapeWithColor.PURPLE_HEART, Shading.OUTLINED);
+    assertNotEquals(card.hashCode(), card2.hashCode());
   }
 
   @Test
@@ -46,7 +49,6 @@ class CardTest {
 
   @Test
   void testToString() {
-    System.out.println(card.toString());
     assertEquals("One, Purple_circle, Outlined", card.toString());
   }
 }
