@@ -1,6 +1,11 @@
+package com.set.model;
+
+import com.set.control.Card;
+import com.set.control.Deck;
 import java.util.Iterator;
 import java.util.Random;
 import java.util.Scanner;
+import com.set.control.Number;
 
 
 public class SetGame implements Runnable {
@@ -40,17 +45,17 @@ public class SetGame implements Runnable {
     for (int i = 0; i < THRESHOLD; i++) {
       Card card = cards[i];
       if(card.getNumber() == Number.ONE) {
-        System.out.print("Card " + (i + 1) + ": " + card.getShading()+ " " );
+        System.out.print("com.set.control.Card " + (i + 1) + ": " + card.getShading()+ " " );
         System.out.println(card.getShape().getSymbol());
       }
       if(card.getNumber() == Number.TWO) {
-        System.out.print("Card " + (i + 1) + ": " + card.getShading()+ " " );
+        System.out.print("com.set.control.Card " + (i + 1) + ": " + card.getShading()+ " " );
         System.out.print(card.getShape().getSymbol());
         System.out.println(card.getShape().getSymbol());
 
       }
       if(card.getNumber() == Number.THREE) {
-        System.out.print("Card " + (i + 1) + ": " + card.getShading() + " " );
+        System.out.print("com.set.control.Card " + (i + 1) + ": " + card.getShading() + " " );
         System.out.print(card.getShape().getSymbol());
         System.out.print(card.getShape().getSymbol());
         System.out.println(card.getShape().getSymbol());
@@ -64,7 +69,7 @@ public class SetGame implements Runnable {
   public void getUserInput() {
     for(int i = 0; i < THRESHOLD_FOR_SET; i++){
       Scanner input = new Scanner(System.in);
-      System.out.print("Card " + (i + 1) + ": ");
+      System.out.print("com.set.control.Card " + (i + 1) + ": ");
       String userInput = input.next();
       if(inputValidation(userInput)){
         if (userInput.equals("R")) {

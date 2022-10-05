@@ -1,7 +1,10 @@
+package com.set.control;
+
+import com.set.model.SetGame;
 import java.util.Timer;
 import java.util.TimerTask;
 
-class TimeOutTask extends TimerTask {
+public class TimeOutTask extends TimerTask {
   private final Thread thread;
   private final Timer timer;
   private final SetGame game;

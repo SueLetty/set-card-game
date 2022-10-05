@@ -1,3 +1,5 @@
+package com.set.control;
+
 import java.util.Objects;
 
 public class Card {
