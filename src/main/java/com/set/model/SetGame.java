@@ -148,7 +148,7 @@ public class SetGame implements Runnable {
 
     boolean result = checkColor() && checkNumber() && checkShading() && checkShape();
     if (result) {
-      setCount(getCount() + 1);
+      count++;
       System.out.printf("You have found %d set(s)!%n ", getCount());
       reset();
     } else {
@@ -165,27 +165,13 @@ public class SetGame implements Runnable {
     display();
   }
 
-
-  public void play() {
-    display();
-    checkSet();
-
-  }
-
   private void resetDataStructures() {
-    setIndexes(new int[THRESHOLD_FOR_SET]);
-    setSet(new Card[THRESHOLD_FOR_SET]);
-    setUserInput(new HashSet<>());
+    indexes = new int[THRESHOLD_FOR_SET];
+    set = new Card[THRESHOLD_FOR_SET];
+    userInput = new HashSet<>();
   }
 
-  private boolean checkColor() {
 
-    return ((set[0].getShape().getColor() == set[1].getShape().getColor()
-        && set[1].getShape().getColor() == set[2].getShape().getColor())
-        || set[0].getShape().getColor() != set[1].getShape().getColor()
-        && set[1].getShape().getColor() != set[2].getShape().getColor()
-        && set[0].getShape().getColor() != set[2].getShape().getColor());
-  }
 
   private boolean duplicateInput(int input) {
     if (userInput.size() == 3) {
@@ -219,7 +205,14 @@ public class SetGame implements Runnable {
       return false;
     }
   }
+  private boolean checkColor() {
 
+    return ((set[0].getShape().getColor() == set[1].getShape().getColor()
+        && set[1].getShape().getColor() == set[2].getShape().getColor())
+        || set[0].getShape().getColor() != set[1].getShape().getColor()
+        && set[1].getShape().getColor() != set[2].getShape().getColor()
+        && set[0].getShape().getColor() != set[2].getShape().getColor());
+  }
   private boolean checkNumber() {
     return ((set[0].getNumber() == set[1].getNumber()
         && set[1].getNumber() == set[2].getNumber())
@@ -244,26 +237,11 @@ public class SetGame implements Runnable {
         && !set[0].getShape().getSymbol().equals(set[2].getShape().getSymbol())));
   }
 
-  public void setSet(Card[] set) {
-    this.set = set;
-  }
-
-
-  public void setIndexes(int[] indexes) {
-    this.indexes = indexes;
-  }
-
-  public void setUserInput(Set<Integer> userInput) {
-    this.userInput = userInput;
-  }
 
   public int getCount() {
     return count;
   }
 
-  public void setCount(int count) {
-    this.count = count;
-  }
 
   @Override
   public void run() {

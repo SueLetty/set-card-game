@@ -16,10 +16,6 @@ public enum ShapeWithColor {
   private final String symbol;
   private final Color color;
 
-  enum Color {
-    RED, GREEN, PURPLE
-  }
-
   ShapeWithColor(String symbol, Color color) {
     this.symbol = symbol;
     this.color = color;
@@ -37,5 +33,8 @@ public enum ShapeWithColor {
   public String toString() {
     String name = name();
     return name.charAt(0) + name.substring(1).toLowerCase();
+  }
+  enum Color {
+    RED, GREEN, PURPLE
   }
 }

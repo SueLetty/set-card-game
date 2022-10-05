@@ -18,7 +18,7 @@ public class Main {
 
     String userInput = input.next();
     if (userInput.equals("p")) {
-      game.play();
+      game.display();
     } else if (userInput.equals("c")) {
       Thread thread = new Thread((Runnable) game);
       thread.start();
