@@ -1,10 +1,7 @@
-
-import java.security.SecureRandom;
 import java.util.Iterator;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.Timer;
-import java.util.TimerTask;
+
 
 public class SetGame implements Runnable {
 

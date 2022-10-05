@@ -8,6 +8,7 @@ class TimeOutTask extends TimerTask {
 
 
   public TimeOutTask(Thread thread, Timer timer, SetGame game) {
+
     this.thread = thread;
     this.timer = timer;
     this.game = game;
