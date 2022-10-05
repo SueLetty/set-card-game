@@ -1,5 +1,4 @@
 package com.set.control;
-
 import com.set.model.SetGame;
 import java.util.Timer;
 import java.util.TimerTask;
