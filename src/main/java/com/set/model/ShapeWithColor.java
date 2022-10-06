@@ -53,8 +53,8 @@ public enum ShapeWithColor {
   /**
    * constructor
    * initialize fields
-   * @param symbol
-   * @param color
+   * @param symbol String
+   * @param color Color
    */
   ShapeWithColor(String symbol, Color color) {
     this.symbol = symbol;
