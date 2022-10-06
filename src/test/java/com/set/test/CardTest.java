@@ -2,10 +2,10 @@ package com.set.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.set.control.Card;
-import com.set.control.Number;
-import com.set.control.Shading;
-import com.set.control.ShapeWithColor;
+import com.set.model.Card;
+import com.set.model.Number;
+import com.set.model.Shading;
+import com.set.model.ShapeWithColor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

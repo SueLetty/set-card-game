@@ -1,7 +1,8 @@
-package com.set.model;
+package com.set.ui;
 
-import com.set.control.*;
-import com.set.control.Number;
+import com.set.model.Card;
+import com.set.model.Deck;
+import com.set.model.Number;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Random;
@@ -114,6 +115,9 @@ public class SetGame implements Runnable {
     getUserInput();
   }
 
+  /**
+   * Get inputs from the user, and store the inputs into some data structures
+   */
   public void getUserInput() {
     for (int i = 0; i < THRESHOLD_FOR_SET; i++) {
       Scanner input = new Scanner(System.in);
@@ -143,7 +147,9 @@ public class SetGame implements Runnable {
     checkSet();
   }
 
-
+  /**
+   * check if the user found a set or not
+   */
   public void checkSet() {
 
     boolean result = checkColor() && checkNumber() && checkShading() && checkShape();
@@ -158,6 +164,9 @@ public class SetGame implements Runnable {
     }
   }
 
+  /**
+   * reset the game.
+   */
   public void reset() {
     deck.shuffle();
     divideCards(deck);
@@ -165,13 +174,20 @@ public class SetGame implements Runnable {
     display();
   }
 
+  /**
+   * reset all the data structures
+   */
   private void resetDataStructures() {
     indexes = new int[THRESHOLD_FOR_SET];
     set = new Card[THRESHOLD_FOR_SET];
     userInput = new HashSet<>();
   }
 
-
+  /**
+   * check if the input is duplicated or not
+   * @param input is an integer.
+   * @return true if the input is duplicated otherwise return false
+   */
   private boolean duplicateInput(int input) {
     if (userInput.size() == 3) {
       resetDataStructures();
@@ -185,6 +201,11 @@ public class SetGame implements Runnable {
     return result;
   }
 
+  /**
+   * check if the input is valid or not
+   * @param input the user input
+   * @return true if the input valid otherwise return false
+   */
   private boolean inputValidation(String input) {
     boolean result = false;
     if (input.equals("Q") || input.equals("R") || isInteger(input)) {
@@ -196,6 +217,11 @@ public class SetGame implements Runnable {
     return result;
   }
 
+  /**
+   * check if the input is integer or not
+   * @param str the user input
+   * @return return true if the input is integer otherwise return false
+   */
   private boolean isInteger(String str) {
     try {
       Integer.parseInt(str);
@@ -205,6 +231,10 @@ public class SetGame implements Runnable {
     }
   }
 
+  /**
+   * check if the three cards have the same color or have different colors
+   * @return return true if they have the same color or have different colors, otherwise return false
+   */
   private boolean checkColor() {
 
     return ((set[0].getShape().getColor() == set[1].getShape().getColor()
@@ -213,7 +243,10 @@ public class SetGame implements Runnable {
         && set[1].getShape().getColor() != set[2].getShape().getColor()
         && set[0].getShape().getColor() != set[2].getShape().getColor());
   }
-
+  /**
+   * check if the three cards have the same number or have different numberss
+   * @return return true if they have the same number or have different numbers, otherwise return false
+   */
   private boolean checkNumber() {
     return ((set[0].getNumber() == set[1].getNumber()
         && set[1].getNumber() == set[2].getNumber())
@@ -221,7 +254,10 @@ public class SetGame implements Runnable {
         && set[1].getNumber() != set[2].getNumber()
         && set[0].getNumber() != set[2].getNumber());
   }
-
+  /**
+   * check if the three cards have the same shading or have different shadings
+   * @return return true if they have the same shading or have different shadings, otherwise return false
+   */
   private boolean checkShading() {
     return ((set[0].getShading() == set[1].getShading()
         && set[1].getShading() == set[2].getShading())
@@ -229,7 +265,10 @@ public class SetGame implements Runnable {
         && set[1].getShading() != set[2].getShading()
         && set[0].getShading() != set[2].getShading());
   }
-
+  /**
+   * check if the three cards have the same shape or have different shapes
+   * @return return true if they have the same shape or have different shapes, otherwise return false
+   */
   private boolean checkShape() {
     return ((set[0].getShape().getSymbol().equals(set[1].getShape().getSymbol())
         && set[1].getShape().getSymbol().equals(set[2].getShape().getSymbol()))
@@ -238,7 +277,10 @@ public class SetGame implements Runnable {
         && !set[0].getShape().getSymbol().equals(set[2].getShape().getSymbol())));
   }
 
-
+  /**
+   * count the number of sets the user found
+   * @return
+   */
   public int getCount() {
     return count;
   }
