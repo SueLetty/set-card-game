@@ -1,4 +1,4 @@
-Set Game
+<h1>Set Game </h1>
 
 
 This is a modified Set game, but it applies the same rules that are from the regular Set card game. If you never played the regular Set card game please check the link below to see the rules.
@@ -7,7 +7,7 @@ https://www.setgame.com/sites/default/files/instructions/SET%20INSTRUCTIONS%20-%
 
 Below are the four features for the regular Set card game and our Set game:
 
-The Regular Set Card Game                     
+<h3>The Regular Set Card Game   </h3>                  
 
 Color:  green, red, purple
 
@@ -19,7 +19,7 @@ Number:  one, two, three
 
 
 
-Our Set game
+<h3>Our Set game</h3>
 
 Color:   green, red, purple
 
