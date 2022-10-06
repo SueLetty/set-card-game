@@ -1,28 +1,58 @@
-package com.set.control;
+package com.set.model;
 
 import java.util.Objects;
 
 public class Card {
 
+  /**
+   * shape and color for each card
+   */
   private final ShapeWithColor shape;
+  /**
+   * number for each card
+   */
   private final Number number;
+  /**
+   * shading for each card
+   */
   private final Shading shading;
 
-
+  /**
+   * constructor initialized all the fields
+   *
+   * @param number  Number
+   * @param shape   ShapeWithColor
+   * @param shading Shading
+   */
   public Card(Number number, ShapeWithColor shape, Shading shading) {
     this.shape = shape;
     this.number = number;
     this.shading = shading;
   }
 
+  /**
+   * get shape from the card
+   *
+   * @return shape
+   */
   public ShapeWithColor getShape() {
     return shape;
   }
 
+  /**
+   * get number from the card
+   *
+   * @return number
+   */
   public Number getNumber() {
     return number;
   }
 
+  /**
+   * get shading from the card
+   *
+   * @return shading
+   */
 
   public Shading getShading() {
     return shading;

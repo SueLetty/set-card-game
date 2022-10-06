@@ -1,9 +1,17 @@
-package com.set.control;
-
+package com.set.model;
+/**
+ * Shape is one of the feature for a card
+ * Color is one of the feature for a card
+ * Using symbol to represent shape and color
+ */
 public enum ShapeWithColor {
-
-
+  /**
+   * Purple heart
+   */
   PURPLE_HEART("\ud83d\udc9c", Color.PURPLE),
+  /**
+   * Green heart
+   */
   GREEN_HEART("\ud83d\udc9a", Color.GREEN),
   RED_HEART("\u2764\ufe0f", Color.RED),
   PURPLE_CIRCLE("\ud83d\udfe3", Color.PURPLE),

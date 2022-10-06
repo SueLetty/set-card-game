@@ -1,4 +1,4 @@
-package com.set.control;
+package com.set.model;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,11 +6,19 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-
+/**
+ * create a deck with card. Shuffle the deck in two different ways.
+ */
 public class Deck implements Iterable<Card> {
 
+  /**
+   * list of cards
+   */
   private final List<Card> cards;
 
+  /**
+   * constructor creates a deck of cards
+   */
   public Deck() {
     cards = new ArrayList<>();
     for (ShapeWithColor shape : ShapeWithColor.values()) {
@@ -23,11 +31,19 @@ public class Deck implements Iterable<Card> {
     }
   }
 
+  /**
+   * shuffle the deck by using a random number
+   *
+   * @param rng Random
+   */
   public void shuffle(Random rng) {
     Collections.shuffle(cards, rng);
 
   }
 
+  /**
+   * shuffle the deck
+   */
   public void shuffle() {
     Collections.shuffle(cards);
   }

@@ -2,8 +2,8 @@ package com.set.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.set.control.Card;
-import com.set.control.Deck;
+import com.set.model.Card;
+import com.set.model.Deck;
 import java.security.SecureRandom;
 import java.util.Iterator;
 import org.junit.jupiter.api.BeforeEach;

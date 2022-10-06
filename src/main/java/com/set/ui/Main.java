@@ -1,7 +1,5 @@
-package com.set.view;
+package com.set.ui;
 
-import com.set.control.TimeOutTask;
-import com.set.model.SetGame;
 import java.security.SecureRandom;
 import java.util.Scanner;
 import java.util.Timer;
@@ -9,8 +7,16 @@ import java.util.Timer;
 
 public class Main {
 
+  /**
+   * Threshold for timer
+   */
   private static final int THRESHOLD = 120000;
 
+  /**
+   * the user can start a game. The user can choose to play a practice game or a challenge game.
+   *
+   * @param args String array
+   */
   public static void main(String[] args) {
     SetGame game = new SetGame(new SecureRandom());
     System.out.println(
