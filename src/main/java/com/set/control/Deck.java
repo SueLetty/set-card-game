@@ -23,21 +23,19 @@ public class Deck implements Iterable<Card> {
     }
   }
 
-  @Override
-  public Iterator<Card> iterator() {
-    return Collections.unmodifiableList(cards).iterator();
-  }
-
   public void shuffle(Random rng) {
     Collections.shuffle(cards, rng);
 
   }
 
-
   public void shuffle() {
     Collections.shuffle(cards);
   }
 
+  @Override
+  public Iterator<Card> iterator() {
+    return Collections.unmodifiableList(cards).iterator();
+  }
 
   @Override
   public int hashCode() {
