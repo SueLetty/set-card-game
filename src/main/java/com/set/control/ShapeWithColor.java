@@ -34,6 +34,7 @@ public enum ShapeWithColor {
     String name = name();
     return name.charAt(0) + name.substring(1).toLowerCase();
   }
+
   enum Color {
     RED, GREEN, PURPLE
   }
