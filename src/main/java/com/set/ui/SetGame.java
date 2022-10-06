@@ -244,7 +244,7 @@ public class SetGame implements Runnable {
         && set[0].getShape().getColor() != set[2].getShape().getColor());
   }
   /**
-   * check if the three cards have the same number or have different numberss
+   * check if the three cards have the same number or have different numbers
    * @return return true if they have the same number or have different numbers, otherwise return false
    */
   private boolean checkNumber() {
@@ -279,7 +279,7 @@ public class SetGame implements Runnable {
 
   /**
    * count the number of sets the user found
-   * @return
+   * @return the count
    */
   public int getCount() {
     return count;

@@ -1,6 +1,5 @@
 package com.set.ui;
 
-import com.set.ui.SetGame;
 import java.util.Timer;
 import java.util.TimerTask;
 
