@@ -13,7 +13,8 @@ public class Main {
 
   public static void main(String[] args) {
     SetGame game = new SetGame(new SecureRandom());
-    System.out.println("Do you want to a practice game or directory go to a Challenge game?(p/c)");
+    System.out.println(
+        "Do you want to play a practice game, or directly go to a challenge game?(p/c)");
     Scanner input = new Scanner(System.in);
 
     String userInput = input.next();
@@ -26,7 +27,7 @@ public class Main {
       TimeOutTask timeOutTask = new TimeOutTask(thread, timer, game);
       timer.schedule(timeOutTask, THRESHOLD);
     } else {
-      System.out.println("Please enter valid input. "
+      System.out.println("Please enter a valid input. "
           + "\np for a practice game"
           + "\nc for a challenge game");
       main(args);

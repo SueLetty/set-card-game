@@ -24,17 +24,17 @@ public class SetGame implements Runnable {
       + "\nQ for stop the game."
       + "\nselect from 1 to 12 to choose a card.";
   private static final String DUPLICATE_INPUT_WARNING_MESSAGE = "You have selected the same card."
-      + "\nPlease re-enter card's number.";
+      + "\nPlease enter a different card number.";
   /**
    * stores 12 cards that are going to be displayed on console
    */
   private final Card[] cards;
   /**
-   * deck of card
+   * deck of cards
    */
   private final Deck deck;
   /**
-   * stores the 3 cards that usr selected to make a set
+   * stores the 3 cards that the user selected to make a set
    */
   private Card[] set;
 
@@ -45,13 +45,13 @@ public class SetGame implements Runnable {
 
   private Set<Integer> userInput;
   /**
-   * counts how many sets that user has found
+   * counts how many sets that the user has found
    */
   private int count;
 
   /**
-   * Constructor for the SetGame class. it initializes deck, cards, set, and indexes. Shuffles the
-   * deck and call divideCards method.
+   * Constructor for the SetGame class. It initializes the deck, cards, set, and indexes. Shuffles
+   * the deck and calls the divideCards method.
    *
    * @param rng rng is a Random type to shuffle the deck.
    */
@@ -67,7 +67,7 @@ public class SetGame implements Runnable {
   }
 
   /**
-   * Gets 12 cards int to cards from a deck.
+   * Gets 12 cards into the cards variable from the card deck.
    *
    * @param deck deck is a deck of cards.
    */
@@ -79,12 +79,12 @@ public class SetGame implements Runnable {
   }
 
   /**
-   * Displays 12 cards that are followed by instruction message on the console.
+   * Displays 12 cards that are followed by the instructions message on the console.
    */
   public void display() {
     System.out.println(
         "Please select three cards to find a set. Please type the card’s number from 1 to 12."
-            + "\nPlease choose different three cards to make a set."
+            + "\nPlease choose 3 different cards to make a set."
             + "\nIf you want to get 12 different cards, then type R to reset the cards. "
             + "\nIf you want to stop the game, you can type Q to stop it.");
     System.out.println(
@@ -172,7 +172,6 @@ public class SetGame implements Runnable {
   }
 
 
-
   private boolean duplicateInput(int input) {
     if (userInput.size() == 3) {
       resetDataStructures();
@@ -205,6 +204,7 @@ public class SetGame implements Runnable {
       return false;
     }
   }
+
   private boolean checkColor() {
 
     return ((set[0].getShape().getColor() == set[1].getShape().getColor()
@@ -213,6 +213,7 @@ public class SetGame implements Runnable {
         && set[1].getShape().getColor() != set[2].getShape().getColor()
         && set[0].getShape().getColor() != set[2].getShape().getColor());
   }
+
   private boolean checkNumber() {
     return ((set[0].getNumber() == set[1].getNumber()
         && set[1].getNumber() == set[2].getNumber())
