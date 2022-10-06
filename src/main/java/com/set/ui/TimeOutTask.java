@@ -4,12 +4,31 @@ import com.set.ui.SetGame;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * create timer for the game.
+ */
 public class TimeOutTask extends TimerTask {
 
+  /**
+   * create a thread
+   */
   private final Thread thread;
+  /**
+   * create a timer
+   */
   private final Timer timer;
+  /**
+   * create an instance of SetGame
+   */
   private final SetGame game;
 
+  /**
+   * constructor
+   * initialize all the fields
+   * @param thread Thread
+   * @param timer Timer
+   * @param game SetGame
+   */
 
   public TimeOutTask(Thread thread, Timer timer, SetGame game) {
 

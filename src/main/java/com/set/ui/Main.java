@@ -4,8 +4,10 @@ import java.security.SecureRandom;
 import java.util.Scanner;
 import java.util.Timer;
 
-
-public class Main {
+/**
+ * start playing the game.
+ */
+public class Main{
 
   /**
    * Threshold for timer
@@ -27,7 +29,7 @@ public class Main {
     if (userInput.equals("p")) {
       game.display();
     } else if (userInput.equals("c")) {
-      Thread thread = new Thread((Runnable) game);
+      Thread thread = new Thread(game);
       thread.start();
       Timer timer = new Timer();
       TimeOutTask timeOutTask = new TimeOutTask(thread, timer, game);
