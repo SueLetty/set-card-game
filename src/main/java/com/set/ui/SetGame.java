@@ -224,8 +224,13 @@ public class SetGame implements Runnable {
    */
   private boolean isInteger(String str) {
     try {
-      Integer.parseInt(str);
-      return true;
+      int num = Integer.parseInt(str);
+      if(1 <= num && num <= 12){
+        return true;
+      }else {
+        return false;
+      }
+
     } catch (NumberFormatException e) {
       return false;
     }
